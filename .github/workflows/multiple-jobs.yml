@@ -15,7 +15,7 @@ jobs:
           name: dragon-text-file
           path: dragon.txt
   
-    build_job_2:
+    test_job_2:
       needs: build_job_1
       runs-on: ubutu_latest
       steps:
@@ -27,8 +27,8 @@ jobs:
       - name: Check for Dragon
         run: grep -i "dragon" dragon.txt
   
-    build_job_3:
-      needs: build_job_2
+    deploy_job_3:
+      needs: test_job_2
       runs-on: ubuntu_latest
       steps:
       - name: Download dragon text file
