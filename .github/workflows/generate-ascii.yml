@@ -7,17 +7,21 @@ jobs:
         - name: Checkout Repo
           uses: actions/checkout@v4
         
-        - name: Install Cowsay program
-          run: sudo apt-get install cowsay
-        
-        - name: Execute Cowsay command
-          run: cowsay -f dragon "this is a dragon... nation symbol of china !!!" >> dragon.txt
 
-        - name: Test file exists
-          run: grep -i "dragon" dragon.txt
+        # - name: Install Cowsay program
+        #   run: sudo apt-get install cowsay
         
-        - name: Read file
-          run: cat dragon.txt
+        # - name: Execute Cowsay command
+        #   run: cowsay -f dragon "this is a dragon... nation symbol of china !!!" >> dragon.txt
+
+        # - name: Test file exists
+        #   run: grep -i "dragon" dragon.txt
+        
+        # - name: Read file
+        #   run: cat dragon.txt
         
         - name: Checkout out repo files
-          run: ls
+          run: ls -ltra
+        
+        - name: Execute Shell script
+          run: ./ascii-script.sh
