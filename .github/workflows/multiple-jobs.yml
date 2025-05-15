@@ -17,7 +17,7 @@ jobs:
   
     test_job_2:
       needs: build_job_1
-      runs-on: ubutu_latest
+      runs-on: ubutu-latest
       steps:
       - name: Download dragon text file
         uses: actions/download-artifact@v4
@@ -29,7 +29,7 @@ jobs:
   
     deploy_job_3:
       needs: test_job_2
-      runs-on: ubuntu_latest
+      runs-on: ubuntu-latest
       steps:
       - name: Download dragon text file
         uses: actions/download-artifact@v4
