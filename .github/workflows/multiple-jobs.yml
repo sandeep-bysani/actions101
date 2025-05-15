@@ -16,7 +16,7 @@ jobs:
       runs-on: ubutu_latest
       steps:
       - name: Sleep for 10 secs
-        run: sleep 30
+        run: sleep 10
 
       - name: Check for Dragon
         run: grep -i "dragon" dragon.txt
