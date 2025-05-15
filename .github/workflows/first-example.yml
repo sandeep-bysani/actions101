@@ -3,15 +3,21 @@ on: push
 jobs:
     first_job:
         runs-on: ubuntu-latest
-        steps:
-            - name: Welcome Message
-              run: echo "Welcome to Github Actions"
-            
+        steps:            
             - name: Checkout Code
               uses: actions/checkout@v4
 
-            - name: List of files
-              run: ls -altr
+            - name: Welcome Message
+              run: | 
+                echo "Welcome to Github Actions"
+                ls -altr
+                cat README.md
+            
+            - name: Generate ASCII code
+              run: cowsay -f dragon "Run over the cover... go dragon !!!" > dragon.txt 
 
-            - name: Read File
-              run: cat README.md
+            # - name: List of files
+            #   run: ls -altr
+
+            # - name: Read File
+            #   run: cat README.md
