@@ -1,0 +1,30 @@
+name: Run Multiple jobs
+on: push
+jobs:
+    build_job_1:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Download Cowsay application
+        run: sudo apt-get install cowsay
+      - name: Execute cowsay dragon
+        run: cowsay -f dragon "This is dragon, national animal of china !!!!" >> dragon.txt
+      - name: Sleep for 30 secs
+        run: sleep 30
+  
+    build_job_2:
+      runs-on: ubutu_latest
+      steps:
+      - name: Sleep for 10 secs
+        run: sleep 30
+
+      - name: Check for Dragon
+        run: grep -i "dragon" dragon.txt
+  
+    build_job_3:
+      runs-on: ubuntu_latest
+      steps:
+      - name: Read the Dragon file
+        run: cat dragon.txt
+        
+      - name: Deploy dragon file
+        run: echo "Deploy dragon file"
